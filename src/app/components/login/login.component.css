@@ -1,0 +1,51 @@
+.form-group {
+    margin: 25px;
+}
+
+::ng-deep.mat-dialog-container {
+    text-align: center;
+    background-color: #1A1A40;
+    color: white;
+}
+
+.form-control-plaintext {
+    border-bottom: 1px solid white;
+    color: white;
+}
+
+.login:hover {
+    background-color: #FA58B6;
+    color: white;
+}
+
+.btn {
+    border-radius: 25px;
+    border: 2px solid white;
+}
+
+.btn-login {
+    border-color:#FA58B6;
+    color:#FA58B6;
+    margin: 15px;
+}
+
+.btn-cancel {
+    border-color: gray;
+    color: gray;
+}
+
+.actions {
+    justify-content: center;
+}
+
+.btn:hover {
+    color: white;
+}
+
+.btn-login:hover {
+    background-color:#FA58B6;
+}
+
+.btn-cancel:hover {
+    background-color: gray;
+}

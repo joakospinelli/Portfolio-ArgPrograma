@@ -1,0 +1,16 @@
+<h1 mat-dialog-title>Iniciar sesión</h1>
+<div mat-dialog-content>
+  <form class="content">
+    <div class="form-group">
+      <input type="email" placeholder="Correo electrónico" class="form-control-plaintext">
+    </div>
+    <div class="form-group">
+      <input type="password" placeholder="Contraseña" class="form-control-plaintext">
+    </div>
+  </form>
+<div mat-dialog-actions>
+  <div class="container actions">
+    <button mat-button class="btn btn-login">Iniciar sesión</button> <br>
+    <button mat-button class="btn btn-cancel" (click)="onNoClick()">Cancelar</button>
+  </div>
+</div>
