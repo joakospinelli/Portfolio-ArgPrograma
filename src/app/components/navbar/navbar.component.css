@@ -1,0 +1,30 @@
+.arg-programa {
+    background-color: #1A1A40;
+}
+
+.ap-logo {
+    width: 8%;
+}
+
+.nav-link:hover {
+    color: #FA58B6;
+}
+
+.nav-link {
+    color: white;
+    font-size: 20px;
+    border-bottom-color: #FA58B6;
+}
+
+.active {
+    color: #FA58B6;
+    border-bottom: 1px solid;
+}
+
+.navbar-collapse {
+    align-items: center;
+}
+
+.header-nav {
+    text-align: center;
+}
