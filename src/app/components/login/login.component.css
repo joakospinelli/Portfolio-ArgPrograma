@@ -6,6 +6,7 @@
     text-align: center;
     background-color: #1A1A40;
     color: white;
+    height: auto;
 }
 
 .form-control-plaintext {

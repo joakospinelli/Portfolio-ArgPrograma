@@ -13,10 +13,11 @@ import { EducacionComponent } from './components/educacion/educacion.component';
 import { Error404Component } from './components/error404/error404.component';
 import { ExperienciaComponent } from './components/experiencia/experiencia.component';
 import { HabilidadesComponent } from './components/habilidades/habilidades.component';
-import { LoginComponent } from './components/login/login.component';
+import { LoginComponent, LoginDialogComponent } from './components/login/login.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { ProyectosComponent } from './components/proyectos/proyectos.component';
 import { SobreMiComponent } from './components/sobre-mi/sobre-mi.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -28,6 +29,7 @@ import { SobreMiComponent } from './components/sobre-mi/sobre-mi.component';
     ExperienciaComponent,
     HabilidadesComponent,
     LoginComponent,
+    LoginDialogComponent,
     PortfolioComponent,
     ProyectosComponent,
     SobreMiComponent
@@ -38,7 +40,9 @@ import { SobreMiComponent } from './components/sobre-mi/sobre-mi.component';
     HttpClientModule,
     MatNativeDateModule,
     MatDialogModule,
-    NoopAnimationsModule
+    NoopAnimationsModule,
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [],
   bootstrap: [AppComponent],
