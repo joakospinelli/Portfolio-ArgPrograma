@@ -1,18 +1,21 @@
 <div *ngIf="item">
     <mat-card class="example-card">
-        <mat-card-subtitle>{{item.nombre}}</mat-card-subtitle>
-        <mat-card-title>Shiba Inu</mat-card-title>
+        <div class="row">
+          <div class="col">
+            <mat-card-subtitle>
+              <p>{{ item.tipo }} - {{ getStatus() }}</p>
+            </mat-card-subtitle>
+            <mat-card-title>{{ item.nombre }}</mat-card-title>
+          </div>
+        </div>
         <mat-card-content>
-          <p>This card has divider and indeterminate progress as footer</p>
-          <p>{{ item.descripcion }}</p>
+          <div class="row">
+            <div class="col">
+              <p>{{ item.institucion }}</p>
+              <p>{{ getFechaInicial() }} - {{ getFechaFinal() }}</p>
+            </div>
+          </div>
         </mat-card-content>
         <mat-divider inset></mat-divider>
-        <mat-card-actions>
-          <button mat-button>LIKE</button>
-          <button mat-button>SHARE</button>
-        </mat-card-actions>
-        <mat-card-footer>
-          <mat-progress-bar mode="indeterminate"></mat-progress-bar>
-        </mat-card-footer>
       </mat-card>
 </div>

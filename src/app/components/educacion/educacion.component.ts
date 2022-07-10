@@ -36,4 +36,27 @@ export class EducacionItem implements OnInit {
     console.log(this.item);
   }
 
+  getStatus(): String {
+    return this.item.terminado ? 'Completado' : 'En curso'
+  }
+
+  private getFecha(fecha: Date): String {
+    let act = new Date(fecha).toISOString().split('T')[0].split('-');
+    act.pop();
+    act.reverse();
+    return act.join('/');
+  }
+
+  getFechaInicial(): String {
+    return this.getFecha(this.item.fechaInicio);
+  }
+
+  getFechaFinal(): String {
+    if (this.item.fechaFin) {
+      return this.getFecha(this.item.fechaFin);
+    } else {
+      return 'Actualidad';
+    }
+  }
+
 }
