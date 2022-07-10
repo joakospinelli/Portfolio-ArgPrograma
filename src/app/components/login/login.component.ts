@@ -13,13 +13,11 @@ export class LoginComponent {
   constructor(private dialog: MatDialog) { }
 
   openDialog(): void {
-    console.log('opening dialog');
     const dialogRef = this.dialog.open(LoginDialogComponent, {
       width: '25%',
     })
 
     dialogRef.afterClosed().subscribe( () => {
-      console.log('dialog closed');
     })
   }
 

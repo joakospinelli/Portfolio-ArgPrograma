@@ -1,4 +1,3 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, HostListener, OnInit, Injectable } from '@angular/core';
 
 @Component({
@@ -9,10 +8,10 @@ import { Component, HostListener, OnInit, Injectable } from '@angular/core';
 @Injectable()
 export class AppComponent implements OnInit {
 
-  constructor(private http: HttpClient){}
+  constructor(){}
 
   ngOnInit(): void {
-    console.log(this.http.get('http://rickandmortyapi.com/api/location/20').subscribe((data: any) => console.log(data)));
+
   }
   
   title = 'portfolio-argprograma';

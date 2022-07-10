@@ -2,6 +2,7 @@
 @import "~@angular/material/prebuilt-themes/indigo-pink.css";
 body {
     color: white;
+    background-color: #7A0BC0;
 }
 
 section {
@@ -10,7 +11,10 @@ section {
     display: flex;
     align-items: center;
     justify-content: center;
-    background-color: #7A0BC0;
+}
+
+.section-title {
+    padding: 5%;
 }
 
 .nav-link:hover {
