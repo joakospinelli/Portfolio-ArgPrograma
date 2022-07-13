@@ -15,7 +15,7 @@ export class EducacionComponent implements OnInit {
   constructor(private http: HttpClient) { }
 
   ngOnInit(): void {
-    this.http.get('http://localhost:8080/educacion').subscribe((data: any) => this.educacionItems = data);
+    this.http.get('http://localhost:8080/educacion').subscribe((data: any) => this.educacionItems = data.sort( (a: any,b: any) =>{ return a.terminado - b.terminado; }));
   }
 
 }
