@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
+import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 
 @Component({
   selector: 'educacion',
@@ -28,12 +29,21 @@ export class EducacionItem implements OnInit {
 
   @Input() item?: any;
 
-  constructor () {
+  constructor (private dialog: MatDialog) {
 
   }
 
   ngOnInit(): void {
-    console.log(this.item);
+
+  }
+
+  openDialog(): void {
+    const dialogRef = this.dialog.open(EducacionDialog, {
+      width: '25%',
+    })
+
+    dialogRef.afterClosed().subscribe( () => {
+    })
   }
 
   getStatus(): String {
@@ -57,6 +67,27 @@ export class EducacionItem implements OnInit {
     } else {
       return 'Actualidad';
     }
+  }
+
+}
+
+@Component({
+  selector: 'educacion-dialog',
+  templateUrl: './educacion-dialog.html',
+  styleUrls: ['./educacion.component.css']
+})
+export class EducacionDialog implements OnInit {
+
+  ngOnInit(): void {
+
+  }
+
+  constructor(public dialogRef: MatDialogRef<EducacionDialog>) {
+
+  }
+
+  onNoClick(): void {
+    this.dialogRef.close();
   }
 
 }

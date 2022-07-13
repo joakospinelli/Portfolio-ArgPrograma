@@ -30,7 +30,6 @@ export class LoginComponent {
 })
 export class LoginDialogComponent implements OnInit {
 
-  hide: boolean = true;
   form: FormGroup;
 
   constructor(public dialogRef: MatDialogRef<LoginDialogComponent>, private formBuilder: FormBuilder, private auth: AuthService) {

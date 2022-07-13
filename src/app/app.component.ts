@@ -31,7 +31,7 @@ export class AppComponent implements OnInit {
     
     document.querySelectorAll('.nb').forEach((nb) => {
       nb.classList.remove('active');
-      if (nb.classList.contains(current)){
+      if (nb.classList.contains(current) && document.getElementById('dialog') === null){
         nb.classList.add('active');
       }
     })

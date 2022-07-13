@@ -4,4 +4,8 @@
     margin: 0px;
 }
 
-
+::ng-deep.mat-dialog-container {
+    background-color: white;
+    color: black;
+    height: auto;
+}
