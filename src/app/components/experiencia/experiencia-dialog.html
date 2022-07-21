@@ -1,0 +1,12 @@
+<h1 mat-dialog-title>{{ data.nombre }} en {{ data.institucion }}</h1>
+<div mat-dialog-content id="dialog">
+  <p *ngIf="data.descripcion"> {{ data.descripcion }}</p>
+  <h1 mat-dialog-title>Competencias y responsabilidades:</h1>
+  <ul>
+    <li *ngFor="let item of data.competencias">
+      {{item}}
+    </li>
+  </ul>
+</div>
+<div mat-dialog-actions>
+  <button class="btn btn-gray" mat-button (click)="onNoClick()">Cerrar</button>

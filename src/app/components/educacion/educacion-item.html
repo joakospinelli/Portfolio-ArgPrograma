@@ -1,21 +1,13 @@
-<div *ngIf="item">
+<div *ngIf="item" class="item">
     <mat-card class="example-card">
-        <div class="row">
-          <div class="col">
+          <div class="info-ed">
             <mat-card-subtitle>
-              <p>{{ item.tipo }} - {{ getStatus() }}</p>
+              <p>{{ item.tipo }} - {{ formatter.getStatus(item.terminado) }}</p>
             </mat-card-subtitle>
-            <mat-card-title>{{ item.nombre }}</mat-card-title>
-          </div>
-        </div>
-        <mat-card-content>
-          <div class="row">
-            <div class="col">
+              <mat-card-title>{{ item.nombre }}</mat-card-title>
               <p>{{ item.institucion }}</p>
-                <button class="btn btn-dark" (click)="openDialog()">Ver más</button>
             </div>
-          </div>
-        </mat-card-content>
+                <button class="btn btn-dark" (click)="openDialog()">Ver más</button>
         <mat-divider inset></mat-divider>
       </mat-card>
 </div>

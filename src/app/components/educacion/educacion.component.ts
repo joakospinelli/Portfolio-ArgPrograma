@@ -1,6 +1,7 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, Inject, Input, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { MatDialog, MatDialogRef } from '@angular/material/dialog';
+import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
+import { EducacionFormatterService } from 'src/app/services/educacion-formatter.service';
 
 @Component({
   selector: 'educacion',
@@ -10,9 +11,10 @@ import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 export class EducacionComponent implements OnInit {
 
   educacionItems: any;
-  prueba: String = '';
 
-  constructor(private http: HttpClient) { }
+  constructor(private http: HttpClient) {
+
+  }
 
   ngOnInit(): void {
     this.http.get('http://localhost:8080/educacion').subscribe((data: any) => this.educacionItems = data.sort( (a: any,b: any) =>{ return a.terminado - b.terminado; }));
@@ -29,7 +31,7 @@ export class EducacionItem implements OnInit {
 
   @Input() item?: any;
 
-  constructor (private dialog: MatDialog) {
+  constructor (private dialog: MatDialog, public formatter: EducacionFormatterService) {
 
   }
 
@@ -39,34 +41,12 @@ export class EducacionItem implements OnInit {
 
   openDialog(): void {
     const dialogRef = this.dialog.open(EducacionDialog, {
-      width: '25%',
+      data: this.item,
+      width: '30%',
     })
 
     dialogRef.afterClosed().subscribe( () => {
     })
-  }
-
-  getStatus(): String {
-    return this.item.terminado ? 'Completado' : 'En curso'
-  }
-
-  private getFecha(fecha: Date): String {
-    let act = new Date(fecha).toISOString().split('T')[0].split('-');
-    act.pop();
-    act.reverse();
-    return act.join('/');
-  }
-
-  getFechaInicial(): String {
-    return this.getFecha(this.item.fechaInicio);
-  }
-
-  getFechaFinal(): String {
-    if (this.item.fechaFin) {
-      return this.getFecha(this.item.fechaFin);
-    } else {
-      return 'Actualidad';
-    }
   }
 
 }
@@ -82,7 +62,7 @@ export class EducacionDialog implements OnInit {
 
   }
 
-  constructor(public dialogRef: MatDialogRef<EducacionDialog>) {
+  constructor(public dialogRef: MatDialogRef<EducacionDialog>, @Inject(MAT_DIALOG_DATA) public data: any, public formatter: EducacionFormatterService) {
 
   }
 

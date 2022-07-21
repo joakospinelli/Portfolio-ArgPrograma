@@ -30,10 +30,25 @@ export class AppComponent implements OnInit {
     });
     
     document.querySelectorAll('.nb').forEach((nb) => {
+
       nb.classList.remove('active');
       if (nb.classList.contains(current) && document.getElementById('dialog') === null){
         nb.classList.add('active');
       }
     })
+
+    document.querySelectorAll('.item').forEach((item) => {
+
+      var windowHeight = window.innerHeight;
+      var elementTop = item.getBoundingClientRect().top;
+      var elementVisible = 150;
+  
+      if (elementTop < windowHeight - elementVisible) {
+        item.classList.add("active");
+      } else {
+        item.classList.remove("active");
+      }
+    })
+
   }
 }

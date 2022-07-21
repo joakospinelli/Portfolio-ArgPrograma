@@ -10,6 +10,10 @@ section {
     display: flex;
 }
 
+.subtitle {
+    opacity: 50%;
+}
+
 .section-title {
     padding: 5%;
 }
@@ -31,12 +35,6 @@ h1 {
 html, body { height: 100%; }
 body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
-.col-card {
-    margin: 2px;
-    min-width: fit-content;
-    max-width: 35%;
-}
-
 .btn-dark, .btn-dark:focus {
     background-color: #7A0BC0;
     color: white;
@@ -44,15 +42,71 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     box-shadow: none;
 }
 
+::ng-deep.mat-dialog-container {
+    background-color: white;
+    color: black;
+    height: auto;
+}
+
 .btn-dark:hover {
     color: #FA58B6;
     background-color: #1A1A40;
 }
 
-.logo {
-    width: 30%;
+.btn {
+    border-radius: 25px;
+    border: 2px solid white;
 }
 
+.btn-pink {
+    border-color:#FA58B6;
+    color:#FA58B6;
+    margin: 15px;
+}
+
+.btn-gray {
+    border-color: gray;
+    color: gray;
+}
+
+.btn-pink:hover {
+    background-color:#FA58B6;
+}
+
+.btn-gray:hover {
+    background-color: gray;
+    color: white;
+}
+
+.item {
+    position: relative;
+    transform: translateY(150px);
+    opacity: 0;
+    transition: 1s all ease;
+}
+  
+.item.active{
+    transform: translateY(0);
+    opacity: 1;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+    background: #1A1A40;
+}
+
+::-webkit-scrollbar-track {
+    opacity: 0; 
+}
+   
+::-webkit-scrollbar-thumb {
+    background: #E15FED;
+    border-radius: 35px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #FA58B6;
+}
 
 
 

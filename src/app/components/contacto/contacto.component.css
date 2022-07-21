@@ -1,0 +1,26 @@
+#contacto {
+    background-color: #270082;
+    height: fit-content;
+    box-shadow: 0 10px 50px rgba(0, 0, 0);
+}
+
+.row {
+    margin-bottom: 10%;
+}
+
+.logo {
+    width: 35%;
+    filter: invert();
+    transform: translateY(0);
+    transition: 0.2s;
+}
+
+.logo:hover {
+    transform: translateY(7px);
+    transition: 0.5s;
+}
+
+a {
+    color: white;
+    text-decoration: none;
+}

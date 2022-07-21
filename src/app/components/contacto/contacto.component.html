@@ -1,5 +1,12 @@
 <section id="contacto">
-    <div class="section-title">
-        <h1>Contacto</h1>
+    <div class="container-fluid">
+        <div class="section-title text-center">
+            <h2>Redes y contacto</h2>
+        </div>
+        <div class="row align-items-center justify-content-center">
+            <div class="col-md-2" *ngFor="let item of contactoItems">
+                <contacto-item [data]="item"></contacto-item>
+            </div>
+        </div>
     </div>
 </section>

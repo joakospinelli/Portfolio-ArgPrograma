@@ -1,5 +1,14 @@
 <section id="proyectos">
-    <div class="section-title">
-        <h1>Proyectos</h1>
+    <div class="container-fluid">
+        <div class="section-title">
+            <h1>Proyectos</h1>
+        </div>
+        <div class="container">
+            <div class="row align-items-center justify-content-center">
+                <div class="col-md-3 my-2 mb-5" *ngFor="let item of proyectosItems">
+                    <proyectos-item [data]="item"></proyectos-item>
+                </div>
+            </div>
+        </div>
     </div>
 </section>

@@ -1,5 +1,13 @@
-<section id="dialog">
-  <div mat-dialog-content>
-    <h1>Hello world!</h1>
+<h1 mat-dialog-title>{{ data.nombre }}</h1>
+<div mat-dialog-content id="dialog">
+  <p class="subtitle">{{ data.tipo }} ({{ formatter.getFechaInicial(data.fechaInicio) }} - {{ formatter.getFechaFinal(data.fechaFin) }})</p>
+  <p>{{ data.institucion }}.</p>
+  <p *ngIf="data.promedio">Promedio: {{ data.promedio }}</p>
+  <p *ngIf="data.descripcion"> {{ data.descripcion }}</p>
+  <div class="display-logo">
+    <img class="logo" src="{{ data.logo }}">
   </div>
-</section>
+</div>
+<div mat-dialog-actions>
+  <button class="btn btn-gray" mat-button (click)="onNoClick()">Cerrar</button>
+</div>

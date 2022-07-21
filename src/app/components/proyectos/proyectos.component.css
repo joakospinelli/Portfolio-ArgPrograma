@@ -1,0 +1,28 @@
+
+.title {
+    border-bottom: 2px solid #FA58B6;
+    text-align: center;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+}
+
+.info {
+    min-height: 5vh;
+    height: 15vh;
+    overflow-y: auto;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+    background-color: white;
+  }
+
+  ::-webkit-scrollbar-track {
+    opacity: 0; 
+  }
+   
+  ::-webkit-scrollbar-thumb {
+    background: #FA58B6;
+    border-radius: 35px;
+  }
