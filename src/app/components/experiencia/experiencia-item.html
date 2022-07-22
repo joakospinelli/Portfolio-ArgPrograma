@@ -12,7 +12,7 @@
           <div class="row">
             <div class="col">
               <p>En {{ data.institucion }}</p>
-                <button class="btn btn-dark" (click)="openDialog()">Ver competencias</button>
+                <button class="btn btn-dark" (click)="openDialog()" *ngIf="data.competencias">Ver competencias</button>
             </div>
           </div>
         </mat-card-content>
