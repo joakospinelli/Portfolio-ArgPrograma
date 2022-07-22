@@ -10,10 +10,10 @@ import { EducacionFormatterService } from 'src/app/services/educacion-formatter.
 })
 export class ExperienciaComponent implements OnInit {
 
-  experienciaItems: any;
+  experienciaItems: Array<any>;
 
   constructor(private http: HttpClient) {
-
+    this.experienciaItems = [];
   }
 
   ngOnInit(): void {

@@ -4,10 +4,13 @@
             <h1>Experiencia laboral</h1>
         </div>
         <div class="container">
-            <div class="row align-items-center justify-content-center">
+            <div class="row align-items-center justify-content-center" *ngIf="experienciaItems.length > 0">
                 <div class="col col-card my-2" *ngFor="let item of experienciaItems">
                     <experiencia-item [data]="item"></experiencia-item>
                 </div>
+            </div>
+            <div class="text-center my-5" *ngIf="experienciaItems.length === 0">
+                <h2 class="subtitle">Todavía no hay nada, podrías ser el primero...</h2>
             </div>
         </div>
     </div>
