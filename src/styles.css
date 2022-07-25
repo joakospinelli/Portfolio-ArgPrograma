@@ -18,7 +18,7 @@ section {
     padding: 5%;
 }
 
-h1 {
+.section-title h1 {
     border-bottom: 1px solid white;
 }
 
@@ -107,6 +107,3 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 ::-webkit-scrollbar-thumb:hover {
     background: #FA58B6;
 }
-
-
-

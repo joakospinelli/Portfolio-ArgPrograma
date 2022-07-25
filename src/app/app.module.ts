@@ -21,6 +21,7 @@ import { LoginComponent, LoginDialogComponent } from './components/login/login.c
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
 import { ProyectosComponent, ProyectosItem } from './components/proyectos/proyectos.component';
 import { SobreMiComponent } from './components/sobre-mi/sobre-mi.component';
+import { InfoComponent } from './components/info/info.component';
 
 
 @NgModule({
@@ -43,7 +44,8 @@ import { SobreMiComponent } from './components/sobre-mi/sobre-mi.component';
     PortfolioComponent,
     ProyectosComponent,
     ProyectosItem,
-    SobreMiComponent
+    SobreMiComponent,
+    InfoComponent
   ],
   imports: [
     BrowserModule,

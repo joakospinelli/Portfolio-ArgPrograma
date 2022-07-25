@@ -1,4 +1,18 @@
 #sobre-mi {
-    height: 100vh;
-    max-height: 100vh;
+    height: 75vh;
+    margin-bottom: 20px;
+}
+
+.sobre-mi-info {
+    margin-top: 15%;
+}
+
+img {
+    width: 100%;
+    min-width: 200px;
+    border-radius: 50%;
+}
+
+.col-1 {
+    min-width: min-content;
 }

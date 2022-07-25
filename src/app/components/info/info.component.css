@@ -1,0 +1,29 @@
+@keyframes fade {
+    0% { transform: translateY(150px); opacity: 0; }
+    100% { transform: translateY(0px); opacity: 100; }
+}
+
+#info {
+    vertical-align: middle;
+    text-align: center;
+    align-items: center;
+    justify-items: center;
+    height: 80vh;
+    width: 100%;
+    background-image: linear-gradient(#270082, #7A0BC0);
+    text-shadow: 1px 1px 2px black;
+}
+
+h1 {
+    font-size: 64px;
+    animation-name: fade;
+    animation-duration: 1.5s;
+    text-shadow: 1px 1px 2px black;
+}
+
+p {
+    color: #FA58B6;
+    font-size: 24px;
+    animation-name: fade;
+    animation-duration: 2s;
+}
