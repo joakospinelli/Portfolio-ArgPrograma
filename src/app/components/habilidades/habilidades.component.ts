@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Habilidad } from 'src/app/classes/habilidad';
+import { HabilidadesService } from 'src/app/services/habilidades.service';
 
 @Component({
   selector: 'habilidades',
@@ -8,14 +9,14 @@ import { HttpClient } from '@angular/common/http';
 })
 export class HabilidadesComponent implements OnInit {
 
-  habilidadItems: any;
+  habilidadItems: Array<Habilidad> = [];
 
-  constructor(private http: HttpClient) {
+  constructor(private service: HabilidadesService) {
 
   }
 
   ngOnInit(): void {
-    this.http.get('http://localhost:8080/habilidades').subscribe((data: any) => this.habilidadItems = data.sort( (a:any, b:any) =>{ return b.porcentaje - a.porcentaje }) );
+    this.service.getHabilidades().subscribe((data: Array<Habilidad>) => this.habilidadItems = data.sort( (a:Habilidad, b:Habilidad) =>{ return b.porcentaje - a.porcentaje }) );
   }
 
 }

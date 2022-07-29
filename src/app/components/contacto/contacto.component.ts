@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Contacto } from 'src/app/classes/contacto';
+import { ContactoService } from 'src/app/services/contacto.service';
 
 @Component({
   selector: 'contacto',
@@ -8,12 +9,12 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ContactoComponent implements OnInit {
 
-  contactoItems: any;
+  contactoItems: Array<Contacto> = [];
 
-  constructor(private http: HttpClient) { }
+  constructor(private service: ContactoService) { }
 
   ngOnInit(): void {
-    this.http.get('http://localhost:8080/contactos').subscribe((data: any) => this.contactoItems = data);
+    this.service.getContacto().subscribe((data: Array<Contacto>) => this.contactoItems = data);
   }
 
 }
@@ -25,16 +26,16 @@ export class ContactoComponent implements OnInit {
 })
 export class ContactoItem implements OnInit {
 
-  @Input() data?: any;
+  @Input() data?: Contacto;
 
   ngOnInit(): void {
 
   }
 
   getLink(): string {
-    if (this.data.descripcion.includes('@')){
+    if (this.data?.descripcion.includes('@')){
       return `mailto:${this.data.descripcion}`;
-    } else return this.data.descripcion;
+    } else return (this.data?.descripcion ?? '');
   }
 
 }

@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { Proyecto } from 'src/app/classes/proyecto';
+import { ProyectosService } from 'src/app/services/proyectos.service';
 
 @Component({
   selector: 'proyectos',
@@ -8,12 +9,12 @@ import { HttpClient } from '@angular/common/http';
 })
 export class ProyectosComponent implements OnInit {
 
-  proyectosItems: any;
+  proyectosItems: Array<Proyecto> = [];
 
-  constructor(private http: HttpClient) { }
+  constructor(private service: ProyectosService) { }
 
   ngOnInit(): void {
-    this.http.get('http://localhost:8080/proyectos').subscribe((data: any) => this.proyectosItems = data );
+    this.service.getProyectos().subscribe((data: Array<Proyecto>) => this.proyectosItems = data );
   }
 
 }

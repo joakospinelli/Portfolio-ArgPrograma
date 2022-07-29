@@ -1,5 +1,6 @@
-import { HttpClient } from '@angular/common/http';
 import { Component, OnInit } from '@angular/core';
+import { Informacion } from 'src/app/classes/informacion';
+import { InformacionService } from 'src/app/services/informacion.service';
 
 @Component({
   selector: 'sobre-mi',
@@ -8,16 +9,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class SobreMiComponent implements OnInit {
 
-  data: any = {
-    nombre: '',
-    descripcion: '',
-    foto: ''
-  }
+  data: Informacion = new Informacion(0,'','','');
 
-  constructor(private http: HttpClient) { }
+  constructor(private service: InformacionService) { }
 
   ngOnInit(): void {
-    this.http.get('http://localhost:8080/informacion').subscribe((data: any) => this.data = data);
+    this.service.getInformacion().subscribe((data: Informacion) => this.data = data);
   }
 
 }

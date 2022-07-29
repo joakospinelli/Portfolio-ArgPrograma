@@ -3,11 +3,9 @@ import { Injectable } from '@angular/core';
 @Injectable({
   providedIn: 'root'
 })
-export class EducacionFormatterService {
+export class FormatterService {
 
-  constructor() {
-
-  }
+  constructor() { }
 
   getStatus(data: boolean): string {
     return data ? 'Completado' : 'En curso'
@@ -31,4 +29,5 @@ export class EducacionFormatterService {
       return 'Actualidad';
     }
   }
+  
 }

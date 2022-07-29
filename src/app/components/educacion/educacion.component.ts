@@ -1,7 +1,8 @@
 import { Component, Inject, Input, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { EducacionFormatterService } from 'src/app/services/educacion-formatter.service';
+import { FormatterService } from 'src/app/services/formatter.service';
+import { EducacionService } from 'src/app/services/educacion.service';
+import { Educacion } from 'src/app/classes/educacion';
 
 @Component({
   selector: 'educacion',
@@ -10,14 +11,14 @@ import { EducacionFormatterService } from 'src/app/services/educacion-formatter.
 })
 export class EducacionComponent implements OnInit {
 
-  educacionItems: any;
+  educacionItems: Array<Educacion> = [];
 
-  constructor(private http: HttpClient) {
+  constructor(private service: EducacionService) {
 
   }
 
   ngOnInit(): void {
-    this.http.get('http://localhost:8080/educacion').subscribe((data: any) => this.educacionItems = data.sort( (a: any,b: any) =>{ return a.terminado - b.terminado; }));
+    this.service.getEducacion().subscribe((data: Array<Educacion>) => this.educacionItems = data.sort((a: Educacion,b: Educacion) =>{ return (b.terminado === a.terminado)? 0 : b.terminado? - 1 : 1; }));
   }
 
 }
@@ -31,7 +32,7 @@ export class EducacionItem implements OnInit {
 
   @Input() item?: any;
 
-  constructor (private dialog: MatDialog, public formatter: EducacionFormatterService) {
+  constructor (private dialog: MatDialog, public formatter: FormatterService) {
 
   }
 
@@ -62,7 +63,7 @@ export class EducacionDialog implements OnInit {
 
   }
 
-  constructor(public dialogRef: MatDialogRef<EducacionDialog>, @Inject(MAT_DIALOG_DATA) public data: any, public formatter: EducacionFormatterService) {
+  constructor(public dialogRef: MatDialogRef<EducacionDialog>, @Inject(MAT_DIALOG_DATA) public data: any, public formatter: FormatterService) {
 
   }
 

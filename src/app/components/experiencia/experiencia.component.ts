@@ -1,7 +1,8 @@
 import { Component, Inject, Input, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 import { MatDialog, MatDialogRef, MAT_DIALOG_DATA } from '@angular/material/dialog';
-import { EducacionFormatterService } from 'src/app/services/educacion-formatter.service';
+import { FormatterService } from 'src/app/services/formatter.service';
+import { ExperienciaService } from 'src/app/services/experiencia.service';
+import { Experiencia } from 'src/app/classes/experiencia';
 
 @Component({
   selector: 'experiencia',
@@ -10,14 +11,12 @@ import { EducacionFormatterService } from 'src/app/services/educacion-formatter.
 })
 export class ExperienciaComponent implements OnInit {
 
-  experienciaItems: Array<any>;
+  experienciaItems: Array<Experiencia> = [];
 
-  constructor(private http: HttpClient) {
-    this.experienciaItems = [];
-  }
+  constructor(private service: ExperienciaService) { }
 
   ngOnInit(): void {
-    this.http.get('http://localhost:8080/trabajos').subscribe((data: any) => this.experienciaItems = data );
+    this.service.getExperiencia().subscribe((data: Array<Experiencia>) => this.experienciaItems = data );
   }
 
 }
@@ -31,7 +30,7 @@ export class ExperienciaItem implements OnInit {
 
   @Input() data?: any;
 
-  constructor(private dialog: MatDialog, public formatter: EducacionFormatterService){ }
+  constructor(private dialog: MatDialog, public formatter: FormatterService){ }
 
   ngOnInit(): void {
 
@@ -56,7 +55,7 @@ export class ExperienciaItem implements OnInit {
 })
 export class ExperienciaDialog implements OnInit {
 
-  constructor(public dialogRef: MatDialogRef<ExperienciaDialog>, @Inject(MAT_DIALOG_DATA) public data: any, public formatter: EducacionFormatterService) {
+  constructor(public dialogRef: MatDialogRef<ExperienciaDialog>, @Inject(MAT_DIALOG_DATA) public data: any, public formatter: FormatterService) {
 
   }
 
