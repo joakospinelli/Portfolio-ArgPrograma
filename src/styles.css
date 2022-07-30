@@ -82,6 +82,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     color: white;
 }
 
+.mat-card {
+    border: 1px solid #FA58B6;
+}
+
 .item {
     position: relative;
     transform: translateY(150px);

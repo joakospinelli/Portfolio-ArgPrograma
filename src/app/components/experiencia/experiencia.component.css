@@ -19,6 +19,10 @@
     min-width: min-content;
 }
 
+.mat-card-title {
+  border-bottom: 2px solid #FA58B6;
+}
+
 ::-webkit-scrollbar {
     width: 5px;
     background-color: white;
