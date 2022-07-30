@@ -3,11 +3,15 @@
 body {
     color: white;
     background-color: #7A0BC0;
+    background-image: url('./assets/wp.png');
+    background-attachment: fixed;
+    background-repeat: no-repeat;
 }
 
 section {
     width: 100%;
     display: flex;
+    padding-top: 40px;
 }
 
 .subtitle {

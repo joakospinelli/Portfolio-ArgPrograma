@@ -21,7 +21,7 @@ export class InfoComponent implements OnInit {
 
   }
 
-  private write(msg: string): Observable<any> {
+  private write(msg: string): void{
     for (let i=0;i < msg.length;i++){
 
       setTimeout(() => {
@@ -34,7 +34,6 @@ export class InfoComponent implements OnInit {
       }, 100 * i);
     }
 
-    return of(true);
   }
 
 }
