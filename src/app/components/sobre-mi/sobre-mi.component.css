@@ -1,10 +1,10 @@
 #sobre-mi {
-    height: 75vh;
+    height: 50vh;
     margin-bottom: 20px;
-}
-
-.sobre-mi-info {
-    margin-top: 15%;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    text-align: justify;
 }
 
 img {
@@ -15,6 +15,10 @@ img {
     object-fit:cover;
 }
 
-.col-1 {
+p {
+    font-size: 20px;
+}
+
+.col-2 {
     min-width: min-content;
 }
