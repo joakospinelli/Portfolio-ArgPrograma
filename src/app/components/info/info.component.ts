@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Observable, of } from 'rxjs';
+import { Observable, of, skip } from 'rxjs';
 import { Informacion } from 'src/app/classes/informacion';
 
 @Component({
@@ -9,7 +9,7 @@ import { Informacion } from 'src/app/classes/informacion';
 })
 export class InfoComponent implements OnInit {
 
-  titulo: string = '_';
+  titulo: string = '';
   data: Informacion = new Informacion(0,'','','');
 
 
@@ -17,11 +17,18 @@ export class InfoComponent implements OnInit {
 
   ngOnInit(): void {
 
-    this.write('Joaquín Spinelli');
+    this.write();
 
   }
 
-  private write(msg: string): void{
+  onClick(): void {
+    this.write();
+  }
+
+  private write(): void{
+    let msg: string = 'Joaquín Spinelli';
+    this.titulo = '_';
+
     for (let i=0;i < msg.length;i++){
 
       setTimeout(() => {
@@ -32,7 +39,10 @@ export class InfoComponent implements OnInit {
         }
         this.titulo = chars.join("");
       }, 100 * i);
+
     }
+
+
 
   }
 

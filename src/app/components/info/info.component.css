@@ -17,12 +17,13 @@
 
 h1 {
     font-size: 64px;
-    transition: transform 0.5s;
+    transition: transform 0.3s;
 }
 
 h1:hover {
-    transform: scale(1.2);
+    transform: scale(1.15);
 }
+
 p {
     color: #FA58B6;
     font-size: 24px;
