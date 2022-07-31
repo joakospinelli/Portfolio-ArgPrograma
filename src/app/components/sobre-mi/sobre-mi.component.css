@@ -1,5 +1,5 @@
 #sobre-mi {
-    height: 50vh;
+    min-height: fit-content;
     margin-bottom: 20px;
     align-items: center;
     justify-content: center;
