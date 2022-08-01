@@ -16,4 +16,8 @@ export class InformacionService {
     return this.http.get<Informacion>(this.url + 'informacion');
   }
 
+  public editInformacion(id: number, e: Informacion): Observable<Informacion> {
+    return this.http.put<Informacion>(this.url + `edit/informacion/${id}`, e);
+  }
+
 }

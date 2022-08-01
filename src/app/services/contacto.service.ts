@@ -15,4 +15,17 @@ export class ContactoService {
   public getContacto(): Observable<Array<Contacto>> {
     return this.http.get<Array<Contacto>>(this.url + 'contactos');
   }
+
+  public addContacto(c: Contacto): Observable<Contacto> {
+    return this.http.post<Contacto>(this.url + 'add/contactos', c);
+  }
+
+  public editContacto(id: number, c: Contacto): Observable<Contacto> {
+    return this.http.put<Contacto>(this.url + `edit/contactos/${id}`, c);
+  }
+
+  public deleteContacto(id: number): Observable<Contacto> {
+    return this.http.delete<Contacto>(this.url + `delete/contactos/${id}`);
+  }
+
 }
