@@ -4,7 +4,7 @@
   <p>{{ data.institucion }}.</p>
   <p *ngIf="data.promedio">Promedio: {{ data.promedio }}</p>
   <p *ngIf="data.descripcion"> {{ data.descripcion }}</p>
-  <div class="display-logo">
+  <div class="display-logo" *ngIf="data.logo">
     <img class="logo" src="{{ data.logo }}">
   </div>
 </div>

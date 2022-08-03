@@ -13,7 +13,7 @@ export class InformacionService {
   constructor(private http: HttpClient) { }
 
   public getInformacion(): Observable<Informacion> {
-    return this.http.get<Informacion>(this.url + 'informacion');
+    return this.http.get<Informacion>(this.url + 'informacion/get');
   }
 
   public editInformacion(id: number, e: Informacion): Observable<Informacion> {

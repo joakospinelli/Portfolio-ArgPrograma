@@ -15,8 +15,8 @@ export class AuthService {
     this.currentUser = new BehaviorSubject<any>(JSON.parse(sessionStorage.getItem('currentUser') || '{}'));
   }
 
-  login(credenciales:any): Observable<any>{
-    return this.http.post(this.url, credenciales).pipe(map(data => {
+  login(credenciales:any): Observable<string>{
+    return this.http.post<string>(this.url, credenciales).pipe(map(data => {
       sessionStorage.setItem('currentUser', JSON.stringify(data));
       return data;
     }));

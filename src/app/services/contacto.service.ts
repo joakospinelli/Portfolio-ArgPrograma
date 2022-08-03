@@ -13,7 +13,7 @@ export class ContactoService {
   constructor(private http: HttpClient) { }
 
   public getContacto(): Observable<Array<Contacto>> {
-    return this.http.get<Array<Contacto>>(this.url + 'contactos');
+    return this.http.get<Array<Contacto>>(this.url + 'contactos/get');
   }
 
   public addContacto(c: Contacto): Observable<Contacto> {
