@@ -69,6 +69,32 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     margin: 15px;
 }
 
+.btn-white {
+    border-color:white;
+    color:white;
+    margin: 15px;
+}
+
+.btn-white:hover {
+    background-color: white;
+}
+
+.hidden {
+    display: none;
+}
+
+.flash-message {
+    width: 33%;
+    margin-top: 15%;
+    margin-left: 33%;
+    margin-right: 33%;
+    z-index: 10000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: fixed;
+}
+
 .btn-gray {
     border-color: gray;
     color: gray;

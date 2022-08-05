@@ -25,6 +25,5 @@ export class Educacion {
         this.fechaFin = fecha_fin;
         this.terminado = terminado;
     }
-    
 
 }

@@ -1,12 +1,12 @@
 export class Contacto {
 
-    id: number;
+    id?: number;
     nombre: string;
     descripcion: string;
     logo: string;
 
-    constructor(id: number, nombre: string, descripcion: string, logo: string){
-        this.id = id;
+    constructor(nombre: string, descripcion: string, logo: string){
+        this.id = undefined;
         this.nombre = nombre;
         this.descripcion = descripcion;
         this.logo = logo;

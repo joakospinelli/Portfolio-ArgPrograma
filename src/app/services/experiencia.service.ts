@@ -17,15 +17,15 @@ export class ExperienciaService {
   }
 
   public addExperiencia(e: Experiencia): Observable<Experiencia> {
-    return this.http.post<Experiencia>(this.url + 'add/trabajos', e);
+    return this.http.post<Experiencia>(this.url + 'trabajos/add/', e);
   }
 
   public editExperiencia(id: number, e: Experiencia): Observable<Experiencia> {
-    return this.http.put<Experiencia>(this.url + `edit/trabajos/${id}`, e);
+    return this.http.put<Experiencia>(this.url + `trabajos/edit/${id}`, e);
   }
 
   public deleteExperiencia(id: number): Observable<Experiencia> {
-    return this.http.delete<Experiencia>(this.url + `delete/trabajos/${id}`);
+    return this.http.delete<Experiencia>(this.url + `trabajos/delete/${id}`);
   }
 
 }

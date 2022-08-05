@@ -1,5 +1,6 @@
 import { Component, Input, OnInit } from '@angular/core';
 import { Habilidad } from 'src/app/classes/habilidad';
+import { AuthService } from 'src/app/services/auth.service';
 import { HabilidadesService } from 'src/app/services/habilidades.service';
 
 @Component({
@@ -11,7 +12,7 @@ export class HabilidadesComponent implements OnInit {
 
   habilidadItems: Array<Habilidad> = [];
 
-  constructor(private service: HabilidadesService) {
+  constructor(private service: HabilidadesService, public auth: AuthService) {
 
   }
 

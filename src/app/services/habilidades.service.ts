@@ -17,15 +17,15 @@ export class HabilidadesService {
   }
 
   public addHabilidad(e: Habilidad): Observable<Habilidad> {
-    return this.http.post<Habilidad>(this.url + 'add/habilidades', e);
+    return this.http.post<Habilidad>(this.url + 'habilidades/add/', e);
   }
 
   public editHabilidad(id: number, e: Habilidad): Observable<Habilidad> {
-    return this.http.put<Habilidad>(this.url + `edit/habilidades/${id}`, e);
+    return this.http.put<Habilidad>(this.url + `habilidades/edit/${id}`, e);
   }
 
   public deleteHabilidad(id: number): Observable<Habilidad> {
-    return this.http.delete<Habilidad>(this.url + `delete/habilidades/${id}`);
+    return this.http.delete<Habilidad>(this.url + `habilidades/delete/${id}`);
   }
 
 }

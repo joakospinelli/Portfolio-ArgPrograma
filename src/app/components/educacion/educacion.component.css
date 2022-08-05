@@ -11,13 +11,21 @@
     overflow: auto;
 }
 
-::ng-deep.mat-dialog-container {
+.mat-dialog-container {
     text-align: start;
-    min-width: min-content;
+    min-width: fit-content;
 }
 
 .logo {
     width: 30%;
+}
+
+.btn-danger {
+    border-color: #dc3545;
+}
+
+.form-control, .form-select {
+    margin: 5px;
 }
 
 .col-card {

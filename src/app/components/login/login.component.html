@@ -1,1 +1,2 @@
-<a class="nav-link" mat-raised-button (click)="openDialog()">Iniciar sesión</a>
+<a class="nav-link" mat-raised-button (click)="openDialog()" *ngIf="!auth.Authenticated">Iniciar sesión</a>
+<a class="nav-link" mat-raised-button (click)="logout()" *ngIf="auth.Authenticated">Cerrar sesión</a>

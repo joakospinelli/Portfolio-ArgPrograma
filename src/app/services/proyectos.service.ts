@@ -17,15 +17,15 @@ export class ProyectosService {
   }
 
   public addProyecto(e: Proyecto): Observable<Proyecto> {
-    return this.http.post<Proyecto>(this.url + 'add/proyectos', e);
+    return this.http.post<Proyecto>(this.url + 'proyectos/add/', e);
   }
 
   public editProyecto(id: number, e: Proyecto): Observable<Proyecto> {
-    return this.http.put<Proyecto>(this.url + `edit/proyectos/${id}`, e);
+    return this.http.put<Proyecto>(this.url + `proyectos/edit/${id}`, e);
   }
 
   public deleteProyecto(id: number): Observable<Proyecto> {
-    return this.http.delete<Proyecto>(this.url + `delete/proyectos/${id}`);
+    return this.http.delete<Proyecto>(this.url + `proyectos/delete/${id}`);
   }
 
 }

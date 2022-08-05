@@ -2,6 +2,9 @@ import { Component, OnInit } from '@angular/core';
 import { MatDialog, MatDialogRef } from '@angular/material/dialog';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from 'src/app/services/auth.service';
+import { Usuario } from 'src/app/classes/usuario';
+import { Router } from '@angular/router';
+import { FlashMessagesService } from 'flash-messages-angular';
 
 @Component({
   selector: 'login',
@@ -10,7 +13,7 @@ import { AuthService } from 'src/app/services/auth.service';
 })
 export class LoginComponent {
 
-  constructor(private dialog: MatDialog) { }
+  constructor(private dialog: MatDialog, public auth: AuthService, private flash: FlashMessagesService) { }
 
   openDialog(): void {
     const dialogRef = this.dialog.open(LoginDialogComponent, {
@@ -19,6 +22,11 @@ export class LoginComponent {
 
     dialogRef.afterClosed().subscribe( () => {
     })
+  }
+
+  logout(): void {
+    this.auth.logout();
+    this.flash.show("Sesión cerrada", { cssClass: 'alert-success', timeout: 3000 });
   }
 
 }
@@ -30,13 +38,15 @@ export class LoginComponent {
 })
 export class LoginDialogComponent implements OnInit {
 
-  form: FormGroup;
+  form: FormGroup; 
+  loginError: boolean = false;
 
-  constructor(public dialogRef: MatDialogRef<LoginDialogComponent>, private formBuilder: FormBuilder, private auth: AuthService) {
+  constructor(public dialogRef: MatDialogRef<LoginDialogComponent>, private formBuilder: FormBuilder, private auth: AuthService, private router: Router,
+              private flash: FlashMessagesService) {
 
     this.form = this.formBuilder.group({
-      email: ['',[Validators.required, Validators.email]],
-      password: ['',[Validators.required, Validators.minLength(6)]],
+      username: ['',[Validators.required]],
+      password: ['',[Validators.required]],
       deviceInfo: this.formBuilder.group({
         deviceId: '',
         deviceType: '',
@@ -54,8 +64,8 @@ export class LoginDialogComponent implements OnInit {
     this.dialogRef.close();
   }
   
-  get Email(){
-    return this.form.get('email');
+  get Username(){
+    return this.form.get('username');
   }
 
   get Password(){
@@ -64,10 +74,16 @@ export class LoginDialogComponent implements OnInit {
 
   onSubmit(event: Event){
     event.preventDefault;
-    this.auth.login(this.form.value).subscribe(data => {
-      console.log(JSON.stringify(data));
-    })
-  }
+    let appUser = new Usuario(this.form.value.username, this.form.value.password);
+    this.auth.login(appUser).subscribe(
+      data => { 
+        this.dialogRef.close();
+        this.flash.show("Sesión iniciada", {cssClass: 'alert-success', timeout: 3000 });
+      },
+      error => { this.loginError = true; }
+    );
+  };
+  
 
 
 }

@@ -1,4 +1,5 @@
 import { Component, HostListener, OnInit, Injectable } from '@angular/core';
+import { FlashMessagesService } from 'flash-messages-angular';
 
 @Component({
   selector: 'app-root',

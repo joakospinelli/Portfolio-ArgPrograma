@@ -5,8 +5,9 @@
                 <img src={{data.foto}}>
             </div>
             <div class="col-md-4">
-                <h1>Sobre mí</h1>
+                <h1>{{data.nombre}}</h1>
                 <p>{{data.descripcion}}</p>
+                <button class="btn btn-white" (click)="onClick()" *ngIf="auth.Authenticated">Editar</button>
             </div>
         </div>
     </div>
