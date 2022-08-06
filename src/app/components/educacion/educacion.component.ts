@@ -139,9 +139,9 @@ export class EducacionCreate {
     event.preventDefault();
 
     if (this.data){
-      this.service.editEducacion(this.ed.id, this.ed).subscribe(() => window.location.reload());
+      this.service.editEducacion(this.ed.id, this.ed).subscribe(() => { this.dialogRef.close(); window.location.reload(); });
     } else {
-      this.service.addEducacion(this.ed).subscribe(() => window.location.reload());
+      this.service.addEducacion(this.ed).subscribe(() => { this.dialogRef.close(); window.location.reload(); });
     }
   }
   

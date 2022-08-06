@@ -12,14 +12,14 @@ import { NgCircleProgressModule } from 'ng-circle-progress';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { NavbarComponent } from './components/navbar/navbar.component';
-import { ContactoComponent, ContactoItem } from './components/contacto/contacto.component';
+import { ContactoComponent, ContactoItem, ContactoCreate } from './components/contacto/contacto.component';
 import { EducacionComponent, EducacionItem, EducacionDialog, EducacionCreate } from './components/educacion/educacion.component';
 import { Error404Component } from './components/error404/error404.component';
-import { ExperienciaComponent, ExperienciaDialog, ExperienciaItem } from './components/experiencia/experiencia.component';
-import { HabilidadesComponent, HabilidadesItem } from './components/habilidades/habilidades.component';
+import { ExperienciaComponent, ExperienciaDialog, ExperienciaItem, ExperienciaCreate } from './components/experiencia/experiencia.component';
+import { HabilidadesComponent, HabilidadesItem, HabilidadesCreate } from './components/habilidades/habilidades.component';
 import { LoginComponent, LoginDialogComponent } from './components/login/login.component';
 import { PortfolioComponent } from './components/portfolio/portfolio.component';
-import { ProyectosComponent, ProyectosItem } from './components/proyectos/proyectos.component';
+import { ProyectosComponent, ProyectosItem, ProyectosCreate } from './components/proyectos/proyectos.component';
 import { SobreMiComponent, SobreMiCreate } from './components/sobre-mi/sobre-mi.component';
 import { InfoComponent } from './components/info/info.component';
 import { InterceptorService } from './services/interceptor.service';
@@ -31,6 +31,7 @@ import { FlashMessagesModule } from 'flash-messages-angular';
     NavbarComponent,
     ContactoComponent,
     ContactoItem,
+    ContactoCreate,
     EducacionComponent,
     EducacionItem,
     EducacionDialog,
@@ -39,13 +40,16 @@ import { FlashMessagesModule } from 'flash-messages-angular';
     ExperienciaComponent,
     ExperienciaDialog,
     ExperienciaItem,
+    ExperienciaCreate,
     HabilidadesComponent,
     HabilidadesItem,
+    HabilidadesCreate,
     LoginComponent,
     LoginDialogComponent,
     PortfolioComponent,
     ProyectosComponent,
     ProyectosItem,
+    ProyectosCreate,
     SobreMiComponent,
     SobreMiCreate,
     InfoComponent

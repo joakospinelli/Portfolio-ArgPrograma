@@ -50,7 +50,7 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 ::ng-deep.mat-dialog-container {
     background-color: white;
     color: black;
-    height: auto;
+    min-width: fit-content;
 }
 
 .btn-dark:hover {
@@ -81,6 +81,10 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
 
 .hidden {
     display: none;
+}
+
+.form-control {
+    margin-top: 5px;
 }
 
 .flash-message {

@@ -49,6 +49,6 @@ export class SobreMiCreate {
 
   onSubmit(event: Event){
     event.preventDefault();
-    this.service.editInformacion(this.info.id, this.info).subscribe(() => window.location.reload());
+    this.service.editInformacion(this.info.id, this.info).subscribe(() => { this.dialogRef.close(); window.location.reload(); });
   }
 }
