@@ -8,7 +8,7 @@ import { Contacto } from '../classes/contacto';
 })
 export class ContactoService {
 
-  url: string = 'http://localhost:8080/'
+  url: string = 'https://jspinelli-ap-backend.herokuapp.com/'
 
   constructor(private http: HttpClient) { }
 

@@ -9,7 +9,7 @@ import { Usuario } from '../classes/usuario';
 })
 export class AuthService {
 
-  url = 'http://localhost:8080/';
+  url = 'https://jspinelli-ap-backend.herokuapp.com/';
   authenticated: boolean = false;
 
   constructor(private http: HttpClient) {

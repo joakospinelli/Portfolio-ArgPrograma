@@ -8,7 +8,7 @@ import { Proyecto } from '../classes/proyecto';
 })
 export class ProyectosService {
 
-  url: string = 'http://localhost:8080/';
+  url: string = 'https://jspinelli-ap-backend.herokuapp.com/';
 
   constructor(private http: HttpClient) { }
 
